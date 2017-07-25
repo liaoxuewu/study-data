@@ -1,0 +1,157 @@
+==================================================
+
+var a = new Object();
+a.value = 1;
+b = a;
+b.value = 2;
+alert(a.value);
+
+==================================================
+
+var a = 10;
+function fn1(a) {
+	console.log(a);
+	a = 20;
+}
+fn1();
+console.log(a);
+		
+==================================================	
+
+var a = 10;
+function fn1(a) {
+	console.log(a);
+	a = 20;
+}
+fn1(a);
+console.log(a);
+		
+==================================================	
+
+var obj = {name:"孙悟空"};
+function fn1(o) {
+	console.log(o.name);
+	o.name = "猪八戒";
+}
+console.log(obj.name);
+
+==================================================	
+
+var obj = {name:"孙悟空"};
+function fn1(o) {
+	console.log(o.name);
+	o = new Object();
+	o.name = "猪八戒"
+}
+console.log(obj.name);
+
+==================================================	
+	
+alert(a);
+var a = 1;
+alert(a);
+function a(){alert(2)};
+alert(a);
+var a = 3;
+alert(a);
+function a(){alert(4)};
+alert(a);
+
+==================================================
+
+var a = 1;
+function b() {
+	var a = 2;
+	function c() {
+		console.log(a);
+	}
+	return c;
+}
+b()();	
+
+==================================================
+
+for(var i=1 ; i<=10 ; i++){
+	setTimeout(function () {
+		console.log(i);
+	},1000*i)
+}
+
+==================================================
+
+var a = 100;
+function fn(){
+	alert(a);
+	var a = 200;
+	alert(a);
+}
+fn();
+var a;
+alert(a);
+var a = 300;
+alert(a);
+
+
+
+==================================================
+
+(function(){
+var a = b = 3;
+})();
+
+console.log("a defined? " + (typeof a !== 'undefined'));
+console.log("b defined? " + (typeof b !== 'undefined'));
+
+==================================================
+
+var myObject = {
+	foo: "bar",
+	func: function() {
+		var self = this;
+		console.log("outer func:  this.foo = " + this.foo);
+		console.log("outer func:  self.foo = " + self.foo);
+		(function() {
+			console.log("inner func:  this.foo = " + this.foo);
+			console.log("inner func:  self.foo = " + self.foo);
+		})();
+	}
+};
+myObject.func();
+
+==================================================
+
+var foo = "Hello";
+(function() {
+	var bar = " World";
+	alert(foo + bar);
+})();
+alert(foo + bar);
+
+
+==================================================
+
+function Foo() {
+    getName = function () { alert (1); };
+    return this;
+}
+Foo.getName = function () { alert (2);};
+Foo.prototype.getName = function () { alert (3);};
+var getName = function () { alert (4);};
+function getName() { alert (5);}
+
+//请写出以下输出结果：
+Foo.getName();
+getName();
+Foo().getName();
+getName();
+new Foo.getName();
+new Foo().getName();
+new new Foo().getName();
+
+
+==================================================
+
+==================================================
+==================================================			
+			
+
